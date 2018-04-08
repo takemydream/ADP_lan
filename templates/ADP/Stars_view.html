@@ -1,0 +1,28 @@
+{% extends 'ADP/base.html' %}
+
+    {% block data_tag %}
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4"><font size="6">DATA_Stars</font></div>
+      <div class="col-md-4"></div>
+    </div>
+    {% endblock data_tag %}
+
+    {% block data_table %}
+    <table class="table table-bordered table-hover table-condensed">
+      <tr>
+        <th>Star_name</th>
+        <th>age_group</th>
+        <th>time_created</th>
+        <th>time_last_update</th>
+      </tr>
+        {% for data_line in star_list %}
+            <tr>
+                <td>{{data_line.star_name_1}}</td>
+                <td>{{data_line.age_group}}</td>
+                <td>{{data_line.time_created}}</td>
+                <td>{{data_line.time_last_update}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endblock data_table %}

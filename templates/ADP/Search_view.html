@@ -1,0 +1,58 @@
+{% extends 'ADP/base.html' %}
+    {% block data_tag %}
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4"><font size="6">Answer_searched</font> </div>
+        <div class="col-md-6"></div>
+    </div>
+    {% endblock data_tag %}
+
+    {% block data_table %}
+    <div>
+        <table class="table table-bordered table-hover table-condensed">
+            {% if search_label == 'Star_name' %}
+                <tr>
+                    <th>Star_name</th>
+                    <th>Film_num</th>
+                    <th>Film_designation</th>
+                    <th>Series</th>
+                </tr>
+                {% for n in data_to_show_formatting %}
+                    <tr>
+                        {% for data in n %}
+                            <td>{{ data }}</td>
+                        {% endfor %}
+                {% endfor %}
+            {% endif %}
+
+            {% if search_label == 'Film_num' %}
+                <tr>
+                    <th>Film_num</th>
+                    <th>Star_name</th>
+                    <th>Film_designation</th>
+                    <th>Series</th>
+                </tr>
+                {% for n in data_to_show_formatting %}
+                    <tr>
+                        {% for data in n %}
+                            <td>{{ data }}</td>
+                        {% endfor %}
+                {% endfor %}
+            {% endif %}
+            {% if search_label == 'Series' %}
+                <tr>
+                    <th>Series</th>
+                    <th>Film_num</th>
+                    <th>Film_designation</th>
+                    <th>Star_name</th>
+                </tr>
+                {% for n in data_to_show_formatting %}
+                    <tr>
+                        {% for data in n %}
+                            <td>{{ data }}</td>
+                        {% endfor %}
+                {% endfor %}
+            {% endif %}
+        </table>
+    {% endblock data_table %}
+    </div>
